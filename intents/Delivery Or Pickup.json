@@ -1,0 +1,126 @@
+{
+  "id": "966fbe28-350d-4893-9713-15cae8dd5968",
+  "name": "Delivery Or Pickup",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "53bdf2c4-2014-4bf7-8ee7-53f80d2b438b",
+          "required": true,
+          "dataType": "@sys.date",
+          "name": "scheduled_date",
+          "value": "$scheduled_date",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What date should I schedule it for?"
+            },
+            {
+              "lang": "en",
+              "value": "What date do you want it scheduled for?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "09d6b2ce-3bc8-4ca9-ba7c-520a813d838d",
+          "required": true,
+          "dataType": "@sys.time",
+          "name": "scheduled_time",
+          "value": "$scheduled_time",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What time should I schedule this for?"
+            },
+            {
+              "lang": "en",
+              "value": "What time suits you to schedule this?"
+            },
+            {
+              "lang": "en",
+              "value": "What time works best ?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "b6525c16-2c48-4aa3-a161-4ecca16b4a62",
+          "required": true,
+          "dataType": "@Order-Types",
+          "name": "order_type",
+          "value": "$order_type",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Do you want to schedule a home delivery or store pick-up?"
+            },
+            {
+              "lang": "en",
+              "value": "Do You want to arrange a home delivery or store pick-up?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "30eae4f2-8883-447d-afbf-1f5baf9e9255",
+          "required": true,
+          "dataType": "@list_names",
+          "name": "list_name",
+          "value": "$list_name",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What list would you like ordered?"
+            },
+            {
+              "lang": "en",
+              "value": "What is the name of the list you want to order?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "facebook": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

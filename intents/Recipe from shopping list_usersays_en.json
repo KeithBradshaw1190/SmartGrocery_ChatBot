@@ -1,0 +1,214 @@
+[
+  {
+    "id": "550e11c3-af54-41bb-92ea-7cee402b9415",
+    "data": [
+      {
+        "text": "Find me a recipe from my ",
+        "userDefined": false
+      },
+      {
+        "text": "monthly shop",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "f3c22407-763f-4537-bfca-7c1f5d2939f4",
+    "data": [
+      {
+        "text": "Find me a recipe from my ",
+        "userDefined": false
+      },
+      {
+        "text": "monthly shop",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      },
+      {
+        "text": ".",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "44231961-f200-4d97-81ac-845ee42c85dd",
+    "data": [
+      {
+        "text": "find me a recipe for ",
+        "userDefined": false
+      },
+      {
+        "text": "lunch",
+        "alias": "recipe-types",
+        "meta": "@Recipe-Types-and-Categories",
+        "userDefined": false
+      },
+      {
+        "text": " from ",
+        "userDefined": false
+      },
+      {
+        "text": "my weekly shop",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "bb2ea00a-fe7c-4254-be6d-625f11018ec0",
+    "data": [
+      {
+        "text": "find me a recipe from my ",
+        "userDefined": false
+      },
+      {
+        "text": "weekly shop",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d69a70b2-6a40-4ed0-8d78-691f391b1770",
+    "data": [
+      {
+        "text": "I want a recipe for ",
+        "userDefined": false
+      },
+      {
+        "text": "breakfast",
+        "alias": "recipe-types",
+        "meta": "@Recipe-Types-and-Categories",
+        "userDefined": true
+      },
+      {
+        "text": " from ",
+        "userDefined": false
+      },
+      {
+        "text": "my monthly shop list",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "7bac454e-c364-4f7f-be0a-019693553979",
+    "data": [
+      {
+        "text": "I want a recipe for ",
+        "userDefined": false
+      },
+      {
+        "text": "lunch",
+        "alias": "recipe-types",
+        "meta": "@Recipe-Types-and-Categories",
+        "userDefined": false
+      },
+      {
+        "text": " from ",
+        "userDefined": false
+      },
+      {
+        "text": "one",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " of my shopping lists",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "115978b2-e9dc-4a95-bc0d-71feffb2b867",
+    "data": [
+      {
+        "text": "I want a recipe from ",
+        "userDefined": false
+      },
+      {
+        "text": "my weekly shop list",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "283b36c5-9bd0-4f1f-8086-606a32427f9b",
+    "data": [
+      {
+        "text": "I want a recipe for ",
+        "userDefined": false
+      },
+      {
+        "text": "dinner",
+        "alias": "recipe-types",
+        "meta": "@Recipe-Types-and-Categories",
+        "userDefined": false
+      },
+      {
+        "text": " from ",
+        "userDefined": false
+      },
+      {
+        "text": "my weekly shop list",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "4c9b7929-13b0-4e02-b8f0-1b6f2a5a813a",
+    "data": [
+      {
+        "text": "I want a recipe from ",
+        "userDefined": false
+      },
+      {
+        "text": "one",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " of my shopping lists",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  }
+]

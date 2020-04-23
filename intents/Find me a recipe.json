@@ -1,0 +1,75 @@
+{
+  "id": "6b1a8617-be3a-4866-a4b1-9bf35c0fea21",
+  "name": "Find me a recipe",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "com.smartgrocery.FIND_RECIPE",
+      "affectedContexts": [
+        {
+          "name": "Findmearecipe-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "cafa5d71-02d1-4034-93a1-ee0940bb0fe8",
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "recipe_ingredients",
+          "value": "$recipe_ingredients",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What ingredients do you have?"
+            },
+            {
+              "lang": "en",
+              "value": "What ingredients do you want to use?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        },
+        {
+          "id": "8cce359f-a69c-4edd-a567-5f61a189f8fb",
+          "required": false,
+          "dataType": "@Recipe-Types-and-Categories",
+          "name": "recipe_type",
+          "value": "$recipe_type",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 1,
+          "platform": "facebook",
+          "lang": "en",
+          "condition": ""
+        }
+      ],
+      "defaultResponsePlatforms": {
+        "facebook": true
+      },
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

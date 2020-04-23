@@ -1,0 +1,27 @@
+[
+  {
+    "value": "Delivery",
+    "synonyms": [
+      "Delivery",
+      "Delivered",
+      "Dropped to my house",
+      "Brought to me",
+      "brought to the house"
+    ]
+  },
+  {
+    "value": "Pick-up",
+    "synonyms": [
+      "Pick-up",
+      "Picked up",
+      "Pick up",
+      "Collection",
+      "Collected",
+      "collect",
+      "collecting",
+      "pickup",
+      "Pickup",
+      "pick up"
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+[
+  {
+    "id": "fb542de1-612f-4e4c-996f-b6469486e33d",
+    "data": [
+      {
+        "text": "can i log-out",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "06aa8709-8a2f-4c25-ba51-8e073c7135af",
+    "data": [
+      {
+        "text": "log-out",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d03b1ca8-cbee-47bd-b6d6-fa124c6f3b50",
+    "data": [
+      {
+        "text": "can i sign-out",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "03534a6f-7d18-41c5-af93-4d1c7f713c65",
+    "data": [
+      {
+        "text": "sign out",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

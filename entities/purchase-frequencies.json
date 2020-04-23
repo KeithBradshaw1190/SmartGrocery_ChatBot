@@ -1,0 +1,9 @@
+{
+  "id": "11dc70ce-d902-434d-af05-32a381a0a651",
+  "name": "purchase-frequencies",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": false
+}

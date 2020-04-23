@@ -1,0 +1,9 @@
+{
+  "id": "ac372545-be1e-4f25-8d0d-77e2d3a97c78",
+  "name": "Order-Types",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": false,
+  "allowFuzzyExtraction": true
+}

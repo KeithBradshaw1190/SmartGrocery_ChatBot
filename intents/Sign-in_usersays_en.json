@@ -1,0 +1,110 @@
+[
+  {
+    "id": "e5bdd185-0d89-42d3-bddf-9f22dac1e01c",
+    "data": [
+      {
+        "text": "Get Started",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "8c4d0ee1-8acb-4aca-9768-0558d72fd0aa",
+    "data": [
+      {
+        "text": "Get starting",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "0076b5cd-a46b-4a9d-bde6-a13f466ed8bb",
+    "data": [
+      {
+        "text": "I want to get started",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "8345d309-ac8b-443d-9d12-9670524a8acb",
+    "data": [
+      {
+        "text": "I want to sign-in",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b84e4bd2-5410-46b6-a670-5701c8ce43b2",
+    "data": [
+      {
+        "text": "I need to sign-in",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d6c53154-7809-4061-b7fc-d5d631b4c76a",
+    "data": [
+      {
+        "text": "I need to sign in",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "857f2dcd-3997-496c-8321-37ea0713111b",
+    "data": [
+      {
+        "text": "I need to login",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "050838fb-6872-4e5e-9be8-25714dac9a9b",
+    "data": [
+      {
+        "text": "I need to login to my account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "02b2aec0-0c5c-4c2a-b5fb-138283de4f6b",
+    "data": [
+      {
+        "text": "I want to sign into my account",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

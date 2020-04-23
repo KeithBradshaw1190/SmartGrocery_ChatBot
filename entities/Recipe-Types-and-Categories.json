@@ -1,0 +1,9 @@
+{
+  "id": "70a7762e-1bd1-4ab4-bb71-bdc086c1c350",
+  "name": "Recipe-Types-and-Categories",
+  "isOverridable": true,
+  "isEnum": false,
+  "isRegexp": false,
+  "automatedExpansion": true,
+  "allowFuzzyExtraction": false
+}

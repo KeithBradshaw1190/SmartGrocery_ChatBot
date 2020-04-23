@@ -1,0 +1,74 @@
+{
+  "id": "7e3a1807-098e-4ab5-868e-5095d2db0621",
+  "name": "Recipe from shopping list",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "a8071a4a-3204-4238-84a4-2288e6210c84",
+          "required": false,
+          "dataType": "@Recipe-Types-and-Categories",
+          "name": "recipe-types",
+          "value": "$recipe-types",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "Do you want a recipe for breakfast, lunch or dinner?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "defaultValue": "recipe",
+          "isList": false
+        },
+        {
+          "id": "6f73c55b-301f-4de9-86c1-64a8b7111ad4",
+          "required": false,
+          "dataType": "@list_names",
+          "name": "list_name",
+          "value": "$list_name",
+          "prompts": [
+            {
+              "lang": "en",
+              "value": "What is the name of the shopping list  you want to use?"
+            },
+            {
+              "lang": "en",
+              "value": "What shopping list should I use for the recipe?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "defaultValue": "n/a",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "en",
+          "condition": "",
+          "speech": []
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": true,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

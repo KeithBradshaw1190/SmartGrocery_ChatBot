@@ -1,0 +1,718 @@
+[
+  {
+    "id": "04ac89b1-07ee-40d1-9572-bc8c5c8d4c7e",
+    "data": [
+      {
+        "text": "Can I schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "pick up",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " for ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "at 5pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "51d1cdee-96d3-443d-a0d0-272d8e182fdb",
+    "data": [
+      {
+        "text": "Tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c7ba6794-a451-446f-9c09-53d0a2125205",
+    "data": [
+      {
+        "text": "Can I schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "delivery",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "at 5pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3bed630e-3f04-4076-81cf-2ba3aaf24855",
+    "data": [
+      {
+        "text": "Can I schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "delivery",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "at 5pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3d6cbe60-e3f2-4e07-a2d5-116d6b24c32c",
+    "data": [
+      {
+        "text": "Can I schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "delivery",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": false
+      },
+      {
+        "text": " with my ",
+        "userDefined": false
+      },
+      {
+        "text": "Date Night",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      },
+      {
+        "text": " list for ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "at 10pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f72ce2b4-e86f-4eae-ba4b-d9afe5e6b441",
+    "data": [
+      {
+        "text": "Can i schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "delivery",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": false
+      },
+      {
+        "text": " for ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "at 5pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3156401d-5ab2-4e80-87a9-9235a51faf57",
+    "data": [
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "4pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5402f083-5c27-43f0-88e8-7fd7fbe43ce3",
+    "data": [
+      {
+        "text": "Can I ",
+        "userDefined": false
+      },
+      {
+        "text": "collect",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " my ",
+        "userDefined": false
+      },
+      {
+        "text": "Date Night",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      },
+      {
+        "text": " list ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "5pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "00acf300-026e-49fa-be2d-1c7c728c2846",
+    "data": [
+      {
+        "text": "can i schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "pickup",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "5pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "036c9571-9a69-4795-8838-5bdb92fe1696",
+    "data": [
+      {
+        "text": "Can i get my ",
+        "userDefined": false
+      },
+      {
+        "text": "Weekly Shop",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "delivered",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "10am",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "9a4878cd-017c-4185-81d4-9e5a946af0db",
+    "data": [
+      {
+        "text": "can i schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "delivery",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "4pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": false
+      },
+      {
+        "text": " with my ",
+        "userDefined": false
+      },
+      {
+        "text": "essentials",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4284122d-35b8-498c-b27d-bb5a83eefc35",
+    "data": [
+      {
+        "text": "can i schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "pickup",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " on ",
+        "userDefined": false
+      },
+      {
+        "text": "Saturday",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "10am",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "5f293808-2642-4b1e-9e16-61def8616c68",
+    "data": [
+      {
+        "text": "Can i schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "delivery",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " for ",
+        "userDefined": false
+      },
+      {
+        "text": "3pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      },
+      {
+        "text": " on ",
+        "userDefined": false
+      },
+      {
+        "text": "thursday",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " with my ",
+        "userDefined": false
+      },
+      {
+        "text": "Date Night",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      },
+      {
+        "text": " list",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "71425c9e-ec2b-4035-b67c-d5bfe9f9e839",
+    "data": [
+      {
+        "text": "I want a ",
+        "userDefined": false
+      },
+      {
+        "text": "delivery",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": false
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "5pm",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c05793a5-c389-4d62-ae5e-a4f06c30c2e0",
+    "data": [
+      {
+        "text": "I want to ",
+        "userDefined": false
+      },
+      {
+        "text": "collect",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "my weekly shopping list",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "this Friday",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "12 noon",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b80f6d18-c6ce-4fc1-a92f-a006a03e0ce0",
+    "data": [
+      {
+        "text": "Can I get a ",
+        "userDefined": false
+      },
+      {
+        "text": "pickup",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "next monday",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": " at ",
+        "userDefined": false
+      },
+      {
+        "text": "10 am",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      },
+      {
+        "text": " with my ",
+        "userDefined": false
+      },
+      {
+        "text": "monthly shopping list",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f74beaad-139a-4c37-b6c0-496bcc700940",
+    "data": [
+      {
+        "text": "Can I schedule a ",
+        "userDefined": false
+      },
+      {
+        "text": "delivery",
+        "alias": "order_type",
+        "meta": "@Order-Types",
+        "userDefined": true
+      },
+      {
+        "text": " for ",
+        "userDefined": false
+      },
+      {
+        "text": "5",
+        "alias": "scheduled_time",
+        "meta": "@sys.time",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "tomorrow",
+        "alias": "scheduled_date",
+        "meta": "@sys.date",
+        "userDefined": true
+      },
+      {
+        "text": "? I need ",
+        "userDefined": false
+      },
+      {
+        "text": "my weekly shopping list",
+        "alias": "list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

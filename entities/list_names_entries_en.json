@@ -1,0 +1,46 @@
+[
+  {
+    "value": "Weekly Shop",
+    "synonyms": [
+      "My Weekly Shop",
+      "my weekly shop",
+      "weekly shopping list",
+      "my weekly shopping",
+      "my weekly shopping list",
+      "weekly shop",
+      "weekly shop list"
+    ]
+  },
+  {
+    "value": "Date Night",
+    "synonyms": [
+      "Date Night",
+      "date night",
+      "date night list"
+    ]
+  },
+  {
+    "value": "Monthly Shop",
+    "synonyms": [
+      "monthly shopping list",
+      "my monthly shopping list",
+      "My Monthly Shopping"
+    ]
+  },
+  {
+    "value": "Essentials",
+    "synonyms": [
+      "Essentials",
+      "my essentials",
+      "essentials list"
+    ]
+  },
+  {
+    "value": "essential items",
+    "synonyms": [
+      "essential items",
+      "essential items list",
+      "my essential items"
+    ]
+  }
+]

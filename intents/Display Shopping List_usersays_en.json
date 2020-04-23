@@ -1,0 +1,269 @@
+[
+  {
+    "id": "a89a2a8b-27c8-453b-928a-951ef699d366",
+    "data": [
+      {
+        "text": "What is in my shopping lists?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b2599434-6e2a-4391-80af-43534bafb4c0",
+    "data": [
+      {
+        "text": "whats in my ",
+        "userDefined": false
+      },
+      {
+        "text": "date night",
+        "alias": "shopping_list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      },
+      {
+        "text": " list?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "9682849b-9297-4d54-bd14-4ee75f3b4465",
+    "data": [
+      {
+        "text": "Whats in ",
+        "userDefined": false
+      },
+      {
+        "text": "my weekly shopping",
+        "alias": "shopping_list_name",
+        "meta": "@list_names",
+        "userDefined": false
+      },
+      {
+        "text": " list?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b260efff-8888-4f04-afc8-e7cff7995987",
+    "data": [
+      {
+        "text": "Can I see what is in my ",
+        "userDefined": false
+      },
+      {
+        "text": "date night",
+        "alias": "shopping_list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      },
+      {
+        "text": " shopping list?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c067a22a-675a-404b-a676-2637fcf49332",
+    "data": [
+      {
+        "text": "Can I see my ",
+        "userDefined": false
+      },
+      {
+        "text": "date night",
+        "alias": "shopping_list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      },
+      {
+        "text": " shopping list?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4f7bfcf5-b8a3-4b91-805c-9de95b85ab4d",
+    "data": [
+      {
+        "text": "Can i see what is in my shopping lists?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "6a2c4a9d-cfc4-49f5-9b07-6a38dd6827ba",
+    "data": [
+      {
+        "text": "what is in my ",
+        "userDefined": false
+      },
+      {
+        "text": "date night",
+        "alias": "shopping_list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      },
+      {
+        "text": " list?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "567f3ad0-d850-4ab1-a1f6-6b95bdd50247",
+    "data": [
+      {
+        "text": "can i see all of my shopping lists?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b0a10135-f738-4e5b-b759-2b279fa7a955",
+    "data": [
+      {
+        "text": "Can I see my ",
+        "userDefined": false
+      },
+      {
+        "text": "shopping lists?",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b7cda6f3-2551-4f60-af36-308ac58de491",
+    "data": [
+      {
+        "text": "What ",
+        "userDefined": false
+      },
+      {
+        "text": "shopping lists",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      },
+      {
+        "text": " do I have?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "dc834ced-4673-40a0-894b-3ea7ad4fc44f",
+    "data": [
+      {
+        "text": "Can I see my ",
+        "userDefined": false
+      },
+      {
+        "text": "shopping list",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      },
+      {
+        "text": " for ",
+        "userDefined": false
+      },
+      {
+        "text": "date night",
+        "alias": "shopping_list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "11bbc9fc-ce65-4aa5-a36c-8396e1cbc97d",
+    "data": [
+      {
+        "text": "Can you show me ",
+        "userDefined": false
+      },
+      {
+        "text": "my weekly shopping",
+        "alias": "shopping_list_name",
+        "meta": "@list_names",
+        "userDefined": true
+      },
+      {
+        "text": " list?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "589ac0ab-4028-4288-bfc6-de8021327450",
+    "data": [
+      {
+        "text": "Can you show me my ",
+        "userDefined": false
+      },
+      {
+        "text": "shopping lists?",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "40ba8b56-59fe-4a8e-bbc5-4b3d60d696b4",
+    "data": [
+      {
+        "text": "What is on my ",
+        "userDefined": false
+      },
+      {
+        "text": "shopping list?",
+        "meta": "@sys.ignore",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

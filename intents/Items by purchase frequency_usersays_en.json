@@ -1,0 +1,258 @@
+[
+  {
+    "id": "52bd4bab-cd94-471c-84da-94b6efe8244b",
+    "data": [
+      {
+        "text": "What do I buy ",
+        "userDefined": false
+      },
+      {
+        "text": "more than once a week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "592f272f-3ef2-4ee1-b89f-6f62bd1f7afe",
+    "data": [
+      {
+        "text": "What do I buy ",
+        "userDefined": false
+      },
+      {
+        "text": "more than once a week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "11b2a8a7-50ed-40c7-8765-39ca4f2b99a5",
+    "data": [
+      {
+        "text": "do i buy anything ",
+        "userDefined": false
+      },
+      {
+        "text": "more than once a week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "82985540-8dc6-4c8d-b3db-a022f8d0c0f8",
+    "data": [
+      {
+        "text": "What do i ",
+        "userDefined": false
+      },
+      {
+        "text": "more than once a week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "51f5be6f-6e4a-49ec-bb52-56bf61c3bee2",
+    "data": [
+      {
+        "text": "what do i buy ",
+        "userDefined": false
+      },
+      {
+        "text": "more than once per week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "08e70b31-083d-42d2-bb52-fcc06a4fbf05",
+    "data": [
+      {
+        "text": "Do i need to buy anything ",
+        "userDefined": false
+      },
+      {
+        "text": "this week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d8f8d717-1c7e-49a9-95dd-4d5d59eda92d",
+    "data": [
+      {
+        "text": "what do I need to buy ",
+        "userDefined": false
+      },
+      {
+        "text": "next week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "81fdeb69-3245-486c-aae0-7f8a734e52e2",
+    "data": [
+      {
+        "text": "What do I buy ",
+        "userDefined": false
+      },
+      {
+        "text": "every other week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f1c4e628-fbc0-47c9-b497-f0147da12b96",
+    "data": [
+      {
+        "text": "What items do i buy ",
+        "userDefined": false
+      },
+      {
+        "text": "every week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ab999f40-c0db-4b92-b53d-f1d7e1c214a8",
+    "data": [
+      {
+        "text": "What do i buy ",
+        "userDefined": false
+      },
+      {
+        "text": "more than once a week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "2615c465-a1ac-4188-94c0-15c11feb0b13",
+    "data": [
+      {
+        "text": "What do I need ",
+        "userDefined": false
+      },
+      {
+        "text": "each week",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e9fdfeff-9dc4-4014-90a5-bc312a292501",
+    "data": [
+      {
+        "text": "What items do I need ",
+        "userDefined": false
+      },
+      {
+        "text": "more than once a week?",
+        "alias": "purchase_frequencies",
+        "meta": "@purchase-frequencies",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

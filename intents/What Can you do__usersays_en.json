@@ -1,0 +1,38 @@
+[
+  {
+    "id": "c3e350a3-04c1-4de4-a212-cc6eca9ccb9b",
+    "data": [
+      {
+        "text": "Are you good at anything?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "9acdbffa-c2b2-49ca-b771-b26f458f3e75",
+    "data": [
+      {
+        "text": "How can you help me?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "cf9fc875-11b8-4d87-8e49-fea1f508a92b",
+    "data": [
+      {
+        "text": "What can you do?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

@@ -1,0 +1,37 @@
+{
+  "id": "2927c8de-6a46-4690-aaf2-66e52399b1a4",
+  "name": "Display Shopping List",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "429933ed-0384-4bbd-a622-846ceb73650f",
+          "required": false,
+          "dataType": "@list_names",
+          "name": "shopping_list_name",
+          "value": "$shopping_list_name",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

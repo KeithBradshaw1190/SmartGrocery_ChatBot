@@ -1,0 +1,41 @@
+[
+  {
+    "value": "Recipes for dinner",
+    "synonyms": [
+      "Late Night recipes",
+      "Recipes for dinner"
+    ]
+  },
+  {
+    "value": "Recipes for lunch",
+    "synonyms": [
+      "recipes for midday",
+      "quick recipes",
+      "Recipes for lunch"
+    ]
+  },
+  {
+    "value": "Dessert recipes",
+    "synonyms": [
+      "Sweet recipes",
+      "Cake recipes",
+      "Baking recipes",
+      "Dessert recipes"
+    ]
+  },
+  {
+    "value": "Breakfast recipes",
+    "synonyms": [
+      "Breakfast recipes",
+      "Brunch recipes"
+    ]
+  },
+  {
+    "value": "Fast recipes",
+    "synonyms": [
+      "Fast recipes",
+      "10 minute meals",
+      "easy recipes"
+    ]
+  }
+]
