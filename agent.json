@@ -13,7 +13,6 @@
     "startIntents": [],
     "systemIntents": [],
     "endIntentIds": [
-      "4bbfd794-baf8-4b44-9da9-53c34495c6bc",
       "6b1a8617-be3a-4866-a4b1-9bf35c0fea21"
     ],
     "oAuthLinking": {
@@ -32,7 +31,7 @@
     "autoPreviewEnabled": false,
     "isDeviceAgent": false
   },
-  "defaultTimezone": "Africa/Casablanca",
+  "defaultTimezone": "Europe/Madrid",
   "webhook": {
     "url": "https://us-central1-smartgrocery-88590.cloudfunctions.net/dialogflowFirebaseFulfillment",
     "username": "",

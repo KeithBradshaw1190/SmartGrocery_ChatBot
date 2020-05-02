@@ -34,23 +34,27 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         request,
         response
     });
+
     console.log('Dialogflow Request headers: ' + JSON.stringify(request.headers));
     console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
     console.log('Inside Main function');
     //let action = JSON.stringify(request.body);
     var messengerID = request.body.queryResult.outputContexts[1].parameters.facebook_sender_id;
     //let userArray =  userInfo();
-    console.log("main " + request.body.queryResult.originalDetectIntentRequest);
+    console.log("main " + request.body.originalDetectIntentRequest.payload.data.sender.id);
     console.log("messenger ID in main " + messengerID);
-
 
     function welcome(agent) {
         agent.add(`Welcome to my agent!`);
     }
 
+
+
     function fallback(agent) {
+
         agent.add(`I didn't understand`);
         agent.add(`I'm sorry, can you try again?`);
+
     }
 
     function signin(agent) {
@@ -58,77 +62,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
         console.log("sign in" + agent.parameters[0]);
     }
-
-    // function CheckUser(agent) {
-    //     console.log("In Check User");
-    //     let genericParams = agent.getContext("generic").parameters;
-    //     console.log("Custom Params" + JSON.stringify(genericParams));
-    //     var scheduled_date = genericParams.scheduled_date.split('T')[0];
-    //     var scheduled_time = genericParams.scheduled_time.replace('Z', '').split('T')[1].split('+')[0];
-    //     let list_name = genericParams.list_name;
-    //     let messengerID = genericParams.facebook_sender_id;
-    //     let order_type = genericParams.order_type;
-
-    //     //Check for user info(StoreId and messengerID)
-    //     var storeID;
-    //     const usersRef = db.collection('users');
-    //     return usersRef.where('messengerID', '==', messengerID)
-    //         .get()
-    //         .then(snapshot => {
-    //             if (snapshot.empty) {
-    //                 //No Messenger ID associated
-    //                 return agent.setFollowupEvent('sign-in');
-    //             } else {
-    //                 snapshot.forEach(doc => {
-    //                     console.log(doc.data());
-    //                     if (doc.data().storeId) {
-    //                         storeID = doc.data().storeId;
-    //                     } else {
-    //                         // No StoreID so user needs to link shop in SmartGrocery Account
-    //                         return agent.add("Please head to your SmartGrocery Account and link to a Grocery Store First!");
-    //                     }
-    //                 });
-    //                 console.log("If else for delivery/pickup" + [scheduled_date, scheduled_time, list_name, messengerID, storeID]);
-    //                 if (order_type == "Delivery") {
-    //                     return delivery(agent, scheduled_date, scheduled_time, list_name, messengerID, storeID);
-    //                 } else if (order_type == 'Pick-up') {
-    //                     return pickup(agent, scheduled_date, scheduled_time, list_name, messengerID, storeID);
-    //                 }
-    //             }
-    //         }).catch((err) => {
-    //             return agent.add('An Error occurred. Can you try again?' + err);
-    //         });
-
-
-
-    // const usersRef = db.collection('users');
-    // return usersRef.where('messengerID', '==', messengerID)
-    //     .get()
-    //     .then(snapshot => {
-    //         if (snapshot.empty) {
-    //             resp.push(false);
-    //         } else {
-    //             snapshot.forEach(doc => {
-    //                 console.log(doc.data());
-    //                 if (doc.data().storeId) {
-    //                     resp = [];
-    //                     console.log("Valid");
-    //                     resp.push("Store Valid");
-    //                     resp.push(doc.data().storeId);
-    //                 } else {
-    //                     console.log("Invalid");
-    //                     console.log(doc.data.name);
-    //                     resp.push("Store Invalid");
-    //                 }
-    //             });
-    //             return resp;
-
-    //         }
-    //     }).catch(() => {
-    //         return agent.add('An Error occurred. Can you try ask me to sign in, then try again?');
-    //     });
-    //}
-
 
 
     function orders(agent) {
@@ -145,6 +78,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         var list_name = parameters.list_name;
 
         var storeID;
+        var userName;
         const usersRef = db.collection('users');
         return usersRef.where('messengerID', '==', messengerID)
             .get()
@@ -157,6 +91,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                         console.log(doc.data());
                         if (doc.data().storeId) {
                             storeID = doc.data().storeId;
+                            userName = doc.data().name;
+
                         } else {
                             // No StoreID so user needs to link shop in SmartGrocery Account
                             return agent.add("Please head to your SmartGrocery Account and link to a Grocery Store First!");
@@ -168,6 +104,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                             'name': 'list',
                             'lifespan': 5,
                             'parameters': {
+                                'userName': userName,
                                 'storeID': storeID,
                                 'messengerID': messengerID,
                                 'order_type': order_type,
@@ -185,6 +122,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                             'name': 'list',
                             'lifespan': 5,
                             'parameters': {
+                                'userName': userName,
                                 'storeID': storeID,
                                 'messengerID': messengerID,
                                 'order_type': order_type,
@@ -251,6 +189,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         let customParams = agent.getContext("newpickup").parameters;
         let genericParams = agent.getContext("generic").parameters;
         let storeID = customParams.storeID;
+        let userName = customParams.userName;
 
         let og_date = genericParams['scheduled_date.original'];
         let og_time = genericParams['scheduled_time.original'];
@@ -274,10 +213,42 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 //Agent Responds with card of success
                 console.log("pickup post success!");
 
-                return agent.add("Your " + list_name + " collection has been scheduled!\n" +
-                    "\nOrder Summary:" +
-                    "\nCollect " + og_date + " at " + og_time + "\n" +
-                    "\nTotal Cost: €" + pqArray[0] + "\nAmount of Goods: " + pqArray[1] + " items");
+                let payload = {
+
+                    "attachment": {
+                        "type": "template",
+                        "payload": {
+                            "template_type": "receipt",
+                            "recipient_name": userName,
+                            "order_number": "12345678902",
+                            "currency": "EUR",
+                            "payment_method": "SmartGrocery",
+                            "order_url": "https://smartgrocery-manager.herokuapp.com/",
+                            "summary": {
+                                "total_cost": pqArray[0]
+                            },
+                            "elements": [{
+                                "title": list_name,
+                                "subtitle": "Collection scheduled successfully! Collect " + og_date + " at " + og_time,
+                                "quantity": pqArray[1],
+                                "price": pqArray[0],
+                                "currency": "EUR",
+                                "image_url": "https://cdn.pixabay.com/photo/2020/04/14/18/54/market-5043895_960_720.png"
+                            }]
+                        }
+                    }
+
+                };
+                return agent.add(new Payload(agent.FACEBOOK, payload, {
+                    sendAsMessage: true,
+                    rawPayload: false
+                }));
+
+
+                // return agent.add("Your " + list_name + " collection has been scheduled!\n" +
+                //     "\nOrder Summary:" +
+                //     "\nCollect " + og_date + " at " + og_time + "\n" +
+                //     "\nTotal Cost: €" + pqArray[0] + "\nAmount of Goods: " + pqArray[1] + " items");
                 // return Promise.resolve();
             })
             .catch(function (error) {
@@ -293,6 +264,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         let customParams = agent.getContext("newdelivery").parameters;
         let genericParams = agent.getContext("generic").parameters;
         let storeID = customParams.storeID;
+        let userName = customParams.userName;
 
         let og_date = genericParams['scheduled_date.original'];
         let og_time = genericParams['scheduled_time.original'];
@@ -318,11 +290,43 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 //console.log("original " + og_date);
                 console.log("original " + og_time);
 
+                // Payload Test
+                let payload = {
 
-                return agent.add("Your " + list_name + " delivery has been scheduled!\n" +
-                    "\nOrder Summary:" +
-                    "\nExpected " + og_date + " at " + og_time + "\n" +
-                    "\nTotal Cost: €" + pqArray[0] + "\nAmount of Goods: " + pqArray[1] + " items");
+                    "attachment": {
+                        "type": "template",
+                        "payload": {
+                            "template_type": "receipt",
+                            "recipient_name": userName,
+                            "order_number": "12345678902",
+                            "currency": "EUR",
+                            "payment_method": "SmartGrocery",
+                            "order_url": "https://smartgrocery-manager.herokuapp.com/",
+                            "summary": {
+                                "total_cost": pqArray[0]
+                            },
+                            "elements": [{
+                                "title": list_name,
+                                "subtitle": "Delivery ordered successfully! Due " + og_date + " at " + og_time,
+                                "quantity": pqArray[1],
+                                "price": pqArray[0],
+                                "currency": "EUR",
+                                "image_url": "https://cdn3.iconfinder.com/data/icons/delivery-services-2/64/grocery-delivery-supermarket-courier-errand-512.png"
+                            }]
+                        }
+                    }
+
+                };
+                return agent.add(new Payload(agent.FACEBOOK, payload, {
+                    sendAsMessage: true,
+                    rawPayload: false
+                }));
+
+                //
+                // return agent.add("Your " + list_name + " delivery has been scheduled!\n" +
+                //     "\nOrder Summary:" +
+                //     "\nExpected " + og_date + " at " + og_time + "\n" +
+                //     "\nTotal Cost: €" + pqArray[0] + "\nAmount of Goods: " + pqArray[1] + " items");
 
             })
             .catch(function (error) {
@@ -627,6 +631,7 @@ function delivery(agent) {
     let list_name = genericParams.list_name;
     let messengerID = genericParams.messengerID;
     let storeID = genericParams.storeID;
+    let userName = genericParams.userName;
     // let list_name = genericParams.
     console.log("delivery params" + JSON.stringify(genericParams));
     console.log("In delivery");
@@ -641,6 +646,7 @@ function delivery(agent) {
                 'name': 'newdelivery',
                 'lifespan': 6,
                 'parameters': {
+                    'userName': userName,
                     'storeID': storeID,
                     'messengerID': messengerID,
                     'pqArray': pqArray
@@ -676,6 +682,7 @@ function pickup(agent) {
     let list_name = genericParams.list_name;
     let messengerID = genericParams.messengerID;
     let storeID = genericParams.storeID;
+    let userName = genericParams.userName;
 
     if (scheduled_time >= pickup_open && scheduled_time <= pickup_closed) {
         return getPQ(agent, list_name, messengerID).then((pqArray) => {
@@ -685,6 +692,7 @@ function pickup(agent) {
                 'name': 'newpickup',
                 'lifespan': 5,
                 'parameters': {
+                    'userName': userName,
                     'storeID': storeID,
                     'messengerID': messengerID,
                     'pqArray': pqArray
@@ -753,7 +761,7 @@ function getAllListsForFrequency(agent, messengerID, frequency_param) {
                     items_arr.forEach(itemsDesc => {
                         console.log("Item frequency is" + itemsDesc.frequency + " item name is " + itemsDesc.name + " list name " + listName);
                         if (itemsDesc.frequency == frequency_param) {
-                            console.log("Matched frequency")
+                            console.log("Matched frequency");
                             string = string + `\n\u2022 ${itemsDesc.name} 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n\n`;
                             console.log(string);
 
@@ -786,6 +794,7 @@ function getPQ(agent, list_name, messengerID) {
                     //agent.add("Name Of the Shopping List: "+doc.data().listName);
                     var price = doc.data().list_price;
                     var quantity = doc.data().list_quantity;
+
                     details.push(price, quantity);
 
                 });

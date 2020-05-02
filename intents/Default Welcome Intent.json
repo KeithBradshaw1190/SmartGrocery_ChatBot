@@ -18,6 +18,7 @@
           "payload": {
             "facebook": {
               "attachment": {
+                "type": "template",
                 "payload": {
                   "template_type": "button",
                   "text": "Welcome to the SmartGrocery ChatBot, Please log in below to verify your account!",
@@ -27,8 +28,7 @@
                       "url": "https://smartgrocery-manager.herokuapp.com/"
                     }
                   ]
-                },
-                "type": "template"
+                }
               }
             }
           }
