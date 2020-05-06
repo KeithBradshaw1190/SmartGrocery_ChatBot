@@ -493,7 +493,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         var ingredients = [ing1, ing2];
         //console.log("ingredient params" + JSON.stringify(customParams));
         console.log("Show recipe follow up");
-        return getRecipe(ingredients, recipe_type).then((result) => {
+        return getRecipe(ingredients, recipe_type, agent).then((result) => {
                 console.log("Get recipe result found!" + result);
                 let ctx = {
                     'name': 'recipes',
@@ -508,7 +508,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             })
             .catch((err) => {
                 console.log(err);
-                agent.add(`Cant find a recipe based on that list right now. Can you one more time?`);
+                agent.add(`Tried searching for a recipe with ${ing1} & ${ing2} but couldnt find any. Try specify the ingredients and ask for a recipe`);
             })
     }
 
@@ -554,7 +554,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             });
             agent.add(card1);
         } else {
-            agent.add("Can you try that one more time?")
+            agent.add("I couldnt find a recipe, Can you try that one more time?")
         }
 
 
@@ -844,12 +844,10 @@ function getSingleList(agent, list_name, messengerID) {
 function getRecipe(ingredients, recipe_type, agent) {
     console.log("recipe type" + recipe_type);
 
-    var pathString = "customsearch/v1?key=" + key + "&cx=" + cx +
-        "&q=" + recipe_type + ingredients;
-    var q = recipe_type + ingredients;
-    if (!(recipe_type)) {
-        pathString = "customsearch/v1?key=" + key + "&cx=" + cx + "&q=" + ingredients;
-        q = ingredients;
+
+    var q = ingredients;
+    if ((recipe_type) || !(recipe_type == null)) {
+        q = recipe_type + " " + ingredients;
     }
     console.log('In Function Get recipe');
 
@@ -860,24 +858,21 @@ function getRecipe(ingredients, recipe_type, agent) {
     var start = 1;
     var num = 1;
 
-    return new Promise((resolve, reject, agent) => {
+    return new Promise((resolve, reject) => {
         customsearch.cse.list({
-                auth: key,
-                cx: cx,
-                q,
-                num: 5
-            }).then(result => result.data)
-            .then((result) => {
-                const {
-                    queries,
-                    items,
-                    searchInformation
-                } = result;
-
-                const page = (queries.request || [])[0] || {};
-                const previousPage = (queries.previousPage || [])[0] || {};
-                const nextPage = (queries.nextPage || [])[0] || {};
-
+            auth: key,
+            cx: cx,
+            q,
+            num: 5
+        }).then((result) => {
+            const {
+                queries,
+                items,
+                searchInformation
+            } = result.data;
+            console.log("RESULT.DATA" + JSON.stringify(items));
+            if (items != undefined) {
+                console.log("rdata is defined")
                 const data = {
                     items: items.map(o => ({
                         link: o.link,
@@ -887,24 +882,21 @@ function getRecipe(ingredients, recipe_type, agent) {
                     }))
                 };
 
-                console.log(data.items);
+                console.log("DATA ITEMS" + data.items);
                 var returned_array = data.items;
                 console.log("First Element title" + returned_array[0].title);
                 const title = returned_array[0].title;
-                const snippet = returned_array[0].snippet;
-                const img = returned_array[0].img;
-                const url = returned_array[0].link;
-                const btnTxt = returned_array[0].title;
                 console.log("Returned array before being sent" + title);
                 return resolve(returned_array);
-            }).catch((error) => {
-                console.log("Get recipe error in catch" + error);
-                //return reject(agent.add("Cant find a recipe for that right now"));
-            });
+            } else {
+                console.log("data items is not filled" + JSON.stringify(items))
+                return reject("Couldnt find a recipe that time, can you try again or search with specific ingredients?");
+            }
 
-
+        }).catch((error) => {
+            console.log("Get recipe error in catch" + error);
+        });
     });
-
 
 
 
