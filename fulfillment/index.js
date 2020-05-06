@@ -899,7 +899,7 @@ function getRecipe(ingredients, recipe_type, agent) {
                 return resolve(returned_array);
             }).catch((error) => {
                 console.log("Get recipe error in catch" + error);
-                return reject(agent.add("Cant find a recipe for that right now"));
+                //return reject(agent.add("Cant find a recipe for that right now"));
             });
 
 
