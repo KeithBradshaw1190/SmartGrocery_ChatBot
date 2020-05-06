@@ -39,7 +39,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
     console.log('Inside Main function');
     //let action = JSON.stringify(request.body);
-    var messengerID = request.body.queryResult.outputContexts[1].parameters.facebook_sender_id;
+    var messengerID = request.body.originalDetectIntentRequest.payload.data.sender.id;
     //let userArray =  userInfo();
     console.log("main " + request.body.originalDetectIntentRequest.payload.data.sender.id);
     console.log("messenger ID in main " + messengerID);
@@ -65,12 +65,13 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
 
     function orders(agent) {
+        console.log("agent params" + agent.parameters);
         // var messengerID = request.body.queryResult.outputContexts[0].parameters.facebook_sender_id;
-        let genericParams = agent.getContext("generic").parameters;
-
-        let messengerID = genericParams.facebook_sender_id;
-        console.log("in orders generic messengerID " + messengerID);
-        console.log("in orders messengerID " + request.body.queryResult.outputContexts[0].parameters.facebook_sender_id);
+        let genericParams = agent.getContext("__system_counters__");
+        console.log("generic " + genericParams)
+        //   let messengerID = genericParams.facebook_sender_id;
+        console.log("in orders messengerID " + messengerID);
+        //console.log("in orders messengerID " + request.body.queryResult.outputContexts[0].parameters.facebook_sender_id);
         const parameters = request.body.queryResult.parameters;
         var scheduled_date = parameters.scheduled_date.split('T')[0];
         var scheduled_time = parameters.scheduled_time.replace('Z', '').split('T')[1].split('+')[0];
@@ -153,7 +154,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         console.log("In slist function");
         const parameters = request.body.queryResult.parameters;
         var shopping_list_name = parameters.shopping_list_name;
-        var messengerID = request.body.queryResult.outputContexts[0].parameters.facebook_sender_id;
+        // var messengerID = request.body.queryResult.outputContexts[0].parameters.facebook_sender_id;
         if (messengerID == null) {
             console.log("its undefined");
             return agent.add("Oh it looks like you're not signed in!");
@@ -187,17 +188,18 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     function cFollowUp(agent) {
         console.log("in collection follow up");
         let customParams = agent.getContext("newpickup").parameters;
-        let genericParams = agent.getContext("generic").parameters;
+        let genericParams = agent.getContext("list").parameters;
         let storeID = customParams.storeID;
         let userName = customParams.userName;
 
         let og_date = genericParams['scheduled_date.original'];
         let og_time = genericParams['scheduled_time.original'];
-        let scheduled_date = genericParams.scheduled_date.split('T')[0];
-        let scheduled_time = genericParams.scheduled_time.replace('Z', '').split('T')[1].split('+')[0];
+        let scheduled_date = genericParams.scheduled_date;
+        let scheduled_time = genericParams.scheduled_time;
         let list_name = genericParams.list_name;
         let pqArray = customParams.pqArray;
-        let messengerID = genericParams.facebook_sender_id;
+        //  let messengerID = genericParams.facebook_sender_id;
+
 
         console.log("customParams in follow up for pickup: " + JSON.stringify(customParams));
         console.log("genericParams in follow up for pickup: " + JSON.stringify(genericParams));
@@ -262,7 +264,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     function dFollowUp(agent) {
         console.log("in  dfollow up");
         let customParams = agent.getContext("newdelivery").parameters;
-        let genericParams = agent.getContext("generic").parameters;
+        let genericParams = agent.getContext("list").parameters;
         let storeID = customParams.storeID;
         let userName = customParams.userName;
 
@@ -272,19 +274,19 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         let scheduled_time = genericParams.scheduled_time;
         let list_name = genericParams.list_name;
         let pqArray = customParams.pqArray;
-        let messengerID = genericParams.facebook_sender_id;
+        //        let messengerID = genericParams.facebook_sender_id;
 
         console.log("customParams: " + JSON.stringify(customParams));
         console.log("genericParams: " + JSON.stringify(genericParams));
 
         return axios.post('https://supermarketmock-api.herokuapp.com/api/delivery/' + storeID, {
                 list_name: list_name,
-                delivery_time: scheduled_time.replace('Z', '').split('T')[1].split('+')[0],
-                delivery_date: scheduled_date.split('T')[0],
+                delivery_time: scheduled_time,
+                delivery_date: scheduled_date,
                 messengerID: messengerID
             })
             .then(function (response) {
-                console.log("Delivery Post Response" + response[0]);
+                console.log("Delivery Post Response" + response);
                 //Agent Responds with card of success
                 console.log("delivery post success!");
                 //console.log("original " + og_date);
@@ -292,7 +294,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
                 // Payload Test
                 let payload = {
-
                     "attachment": {
                         "type": "template",
                         "payload": {
@@ -307,7 +308,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                             },
                             "elements": [{
                                 "title": list_name,
-                                "subtitle": "Delivery ordered successfully! Due " + og_date + " at " + og_time,
+                                "subtitle": "Delivery ordered successfully! Due: " + og_date + " at " + og_time,
                                 "quantity": pqArray[1],
                                 "price": pqArray[0],
                                 "currency": "EUR",
@@ -317,7 +318,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                     }
 
                 };
-                return agent.add(new Payload(agent.FACEBOOK, payload, {
+                agent.add(new Payload(agent.FACEBOOK, payload, {
                     sendAsMessage: true,
                     rawPayload: false
                 }));
@@ -340,7 +341,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     function slFollowUp(agent) {
         console.log("In slFollowUp");
         let params = request.body.queryResult.outputContexts[1].parameters;
-        let messengerID = params.messengerID;
+        // let messengerID = params.messengerID;
         let list_name = params.list_name;
         var shopping_list_qp = [];
         const listDoc = db.collection('shopping_lists');
@@ -362,7 +363,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             .then(snapshot => {
                 if (snapshot.empty) {
                     console.log('No matching documents.');
-                    return;
+                    return agent.add("I can t find that shopping list does it exist?");
                 } else {
                     snapshot.forEach(doc => {
                         console.log("Using ingredients from" + doc.data().listName);
@@ -387,7 +388,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         console.log("In itemsByFrequency");
         const parameters = request.body.queryResult.parameters;
         var frequency_param = parameters.purchase_frequencies;
-        var messengerID = request.body.queryResult.outputContexts[0].parameters.facebook_sender_id;
+        //var messengerID = request.body.queryResult.outputContexts[0].parameters.facebook_sender_id;
         if (messengerID == null) {
             console.log("messenger ID undefined in itemByFrequency" + messengerID);
             return agent.add("Oh it looks like you're not signed in!");
@@ -411,7 +412,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         const parameters = request.body.queryResult.parameters;
         //var recipe_type = parameters.recipe_types;
         var shopping_list_name = parameters.list_name;
-        var messengerID = request.body.queryResult.outputContexts[0].parameters.facebook_sender_id;
+        //var messengerID = request.body.queryResult.outputContexts[0].parameters.facebook_sender_id;
         if (messengerID == null) {
             console.log("its undefined");
             return agent.add("Oh it looks like you're not signed in!");
@@ -427,7 +428,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
         } else {
             console.log("In else about to return ingredients from list");
             return ingredientsFromList(agent, shopping_list_name, messengerID).then((ingredients) => {
-                console.log("About to call recipe form list follow up" + ingredients);
+                console.log("About to call recipe form list follow up." + ingredients);
                 let ctx = {
                     'name': 'ingredientparams',
                     'lifespan': 5,
