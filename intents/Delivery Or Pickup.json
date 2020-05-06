@@ -9,7 +9,7 @@
       "affectedContexts": [],
       "parameters": [
         {
-          "id": "b034bc3c-56a9-4bbe-a5ba-5b6a86a131e7",
+          "id": "a2b4bbc8-47a5-4cb8-b470-7ff284c98edb",
           "required": true,
           "dataType": "@sys.date",
           "name": "scheduled_date",
@@ -31,7 +31,7 @@
           "isList": false
         },
         {
-          "id": "2f389142-04b6-40e0-b86a-b76939f9f4f3",
+          "id": "1f72e547-67c2-41ae-8686-fabd3d63f4ce",
           "required": true,
           "dataType": "@sys.time",
           "name": "scheduled_time",
@@ -57,7 +57,7 @@
           "isList": false
         },
         {
-          "id": "607f4dce-b66f-4922-8c79-825e52df7f15",
+          "id": "18ed8fe4-48fa-4553-a719-907c8761c339",
           "required": true,
           "dataType": "@Order-Types",
           "name": "order_type",
@@ -79,7 +79,7 @@
           "isList": false
         },
         {
-          "id": "b774cd81-33e4-4c8f-99f5-49c49fe0edf4",
+          "id": "570a2a7f-05f4-42e7-84eb-2dfe22e25262",
           "required": true,
           "dataType": "@list_names",
           "name": "list_name",
@@ -106,7 +106,7 @@
           "type": 0,
           "lang": "en",
           "condition": "",
-          "speech": []
+          "speech": "Connection seems slow, could you try the ordering process again?"
         }
       ],
       "defaultResponsePlatforms": {

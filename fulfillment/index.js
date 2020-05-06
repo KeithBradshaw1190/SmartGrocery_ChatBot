@@ -187,15 +187,16 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
     function cFollowUp(agent) {
         console.log("in collection follow up");
+        let listParams = agent.getContext("list").parameters;
         let customParams = agent.getContext("newpickup").parameters;
-        let genericParams = agent.getContext("list").parameters;
+        let genericParams = agent.getContext("generic").parameters;
         let storeID = customParams.storeID;
         let userName = customParams.userName;
 
         let og_date = genericParams['scheduled_date.original'];
         let og_time = genericParams['scheduled_time.original'];
-        let scheduled_date = genericParams.scheduled_date;
-        let scheduled_time = genericParams.scheduled_time;
+        let scheduled_date = listParams.scheduled_date;
+        let scheduled_time = listParams.scheduled_time;
         let list_name = genericParams.list_name;
         let pqArray = customParams.pqArray;
         //  let messengerID = genericParams.facebook_sender_id;
@@ -203,6 +204,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
         console.log("customParams in follow up for pickup: " + JSON.stringify(customParams));
         console.log("genericParams in follow up for pickup: " + JSON.stringify(genericParams));
+        console.log("listparams in follow up for pickup: " + JSON.stringify(listParams));
 
 
         return axios.post('https://supermarketmock-api.herokuapp.com/api/pickup/' + storeID, {
@@ -263,21 +265,25 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
     function dFollowUp(agent) {
         console.log("in  dfollow up");
+        let listParams = agent.getContext("list").parameters;
+
         let customParams = agent.getContext("newdelivery").parameters;
-        let genericParams = agent.getContext("list").parameters;
+        let genericParams = agent.getContext("generic").parameters;
         let storeID = customParams.storeID;
         let userName = customParams.userName;
 
         let og_date = genericParams['scheduled_date.original'];
         let og_time = genericParams['scheduled_time.original'];
-        let scheduled_date = genericParams.scheduled_date;
-        let scheduled_time = genericParams.scheduled_time;
+        let scheduled_date = listParams.scheduled_date;
+        let scheduled_time = listParams.scheduled_time;
         let list_name = genericParams.list_name;
         let pqArray = customParams.pqArray;
         //        let messengerID = genericParams.facebook_sender_id;
 
         console.log("customParams: " + JSON.stringify(customParams));
         console.log("genericParams: " + JSON.stringify(genericParams));
+        console.log("listParams: " + JSON.stringify(listParams));
+
 
         return axios.post('https://supermarketmock-api.herokuapp.com/api/delivery/' + storeID, {
                 list_name: list_name,
@@ -447,6 +453,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
 
 
     function displayMessage(agent, snapshot) {
+        console.log("Display message")
         var string = "";
         var shopping_list_qp = [];
         if (snapshot.empty) {
@@ -457,7 +464,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 console.log(doc.id);
                 shopping_list_qp.push(doc.data());
                 console.log("Shopping List qp in single list " + shopping_list_qp);
-                string = string + `📝${doc.data().listName} \n🛒${doc.data().list_quantity} items & costs €${doc.data().list_price} \nIt contains the following items: \n`;
+                string = string + `📝 ${doc.data().listName} \n🛒 ${doc.data().list_quantity} item(s) & costs €${doc.data().list_price} \nIt contains the following items: \n`;
                 var items_arr = doc.data().items;
                 items_arr.forEach(itemsDesc => {
                     string = string + `\n\u2022 ${itemsDesc.name} 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n\n`;
@@ -758,18 +765,20 @@ function getAllListsForFrequency(agent, messengerID, frequency_param) {
                 snapshot.forEach(doc => {
                     listName = doc.data().listName;
                     items_arr = doc.data().items;
-                    string = string + `📝${listName}\n`;
+                    //  string = string + `📝${listName}\n`;
                     items_arr.forEach(itemsDesc => {
                         console.log("Item frequency is" + itemsDesc.frequency + " item name is " + itemsDesc.name + " list name " + listName);
                         if (itemsDesc.frequency == frequency_param) {
                             console.log("Matched frequency");
-                            string = string + `\n\u2022 ${itemsDesc.name} 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n\n`;
+                            string = string + `\u2022 ${itemsDesc.name} 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity} (📝 ${listName}).\n\n`;
                             console.log(string);
 
                         }
                     });
                 });
-
+                if (string == "") {
+                    string = "Looks you dont have any items purchased by this frequency.";
+                }
                 console.log(string);
                 return Promise.resolve(string);
             }
