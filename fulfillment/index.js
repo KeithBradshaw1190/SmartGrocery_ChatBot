@@ -45,7 +45,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     console.log("messenger ID in main " + messengerID);
 
     function welcome(agent) {
-        agent.add(`Welcome to my agent!`);
+        agent.setFollowupEvent('sign-in');
+        agent.add(`Welcome to Smartgrocery!`);
     }
 
 
@@ -369,7 +370,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
             .then(snapshot => {
                 if (snapshot.empty) {
                     console.log('No matching documents.');
-                    return agent.add("I can t find that shopping list does it exist?");
+                    return agent.add("I can't find that shopping list does it exist?");
                 } else {
                     snapshot.forEach(doc => {
                         console.log("Using ingredients from" + doc.data().listName);
@@ -381,7 +382,12 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                         return departmentArray.indexOf(item.department) >= 0;
                     });
                     console.log(potentialIngredients);
-                    return potentialIngredients;
+                  
+                    if (!potentialIngredients) {
+                    return agent.add("Not enough food items in your list to find a recipe right now!");
+                    } else {
+                        return potentialIngredients;
+                    }
                 }
 
                 //return Promise.resolve(string);
@@ -464,10 +470,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 console.log(doc.id);
                 shopping_list_qp.push(doc.data());
                 console.log("Shopping List qp in single list " + shopping_list_qp);
-                string = string + `📝 ${doc.data().listName} \n🛒 ${doc.data().list_quantity} item(s) & costs €${doc.data().list_price} \nIt contains the following items: \n`;
+                string = string + `📝 ${doc.data().listName} \n\n🛒 ${doc.data().list_quantity} item(s) with a total cost of €${doc.data().list_price} \n\nIt contains the following items: \n`;
                 var items_arr = doc.data().items;
                 items_arr.forEach(itemsDesc => {
-                    string = string + `\n\u2022 ${itemsDesc.name} 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n\n`;
+                    string = string + `\n\u2022${itemsDesc.name} 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n\n`;
                 });
             });
         }
@@ -731,10 +737,10 @@ function getAllLists(agent, messengerID) {
             } else {
                 snapshot.forEach(doc => {
 
-                    string = string + `📝${doc.data().listName} \n🛒${doc.data().list_quantity} items & costs €${doc.data().list_price} \nIt contains the following items: \n`;
+                    string = string + `📝 ${doc.data().listName} \n\n🛒 ${doc.data().list_quantity} item(s) with a total cost of €${doc.data().list_price} \n\nIt contains the following items: \n`;
                     var items_arr = doc.data().items;
                     items_arr.forEach(itemsDesc => {
-                        string = string + `\n\u2022 ${itemsDesc.name}\n 𝗣𝗿𝗶𝗰𝗲 𝗣𝗲𝗿 𝗜𝘁𝗲𝗺: €${itemsDesc.price}\n 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n\n`;
+                        string = string + `\n\u2022${itemsDesc.name}\n𝗣𝗿𝗶𝗰𝗲 𝗣𝗲𝗿 𝗜𝘁𝗲𝗺: €${itemsDesc.price}\n𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n\n`;
                     });
 
                 });

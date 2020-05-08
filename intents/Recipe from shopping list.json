@@ -9,7 +9,7 @@
       "affectedContexts": [],
       "parameters": [
         {
-          "id": "b2c7ad17-7451-4be1-8093-417540c6fd70",
+          "id": "631017dd-07b9-4469-8d1c-2f67ceb989fe",
           "required": false,
           "dataType": "@Recipe-Types-and-Categories",
           "name": "recipe-types",
@@ -28,7 +28,7 @@
           "isList": false
         },
         {
-          "id": "19d721af-0b4f-4162-8f91-5208cd8be213",
+          "id": "73901c04-2f43-449c-b5cb-0ff58c7a3ee4",
           "required": false,
           "dataType": "@list_names",
           "name": "list_name",
@@ -56,7 +56,7 @@
           "type": 0,
           "lang": "en",
           "condition": "",
-          "speech": "Cant find a recipe from your list, try again or ask for a recipe with specific ingredients!"
+          "speech": "Cant find a recipe from your list items. Try again, add more food items to the list or ask for a recipe with specific ingredients!"
         }
       ],
       "defaultResponsePlatforms": {},
