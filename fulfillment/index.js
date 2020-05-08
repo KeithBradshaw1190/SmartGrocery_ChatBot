@@ -382,9 +382,9 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                         return departmentArray.indexOf(item.department) >= 0;
                     });
                     console.log(potentialIngredients);
-                  
+
                     if (!potentialIngredients) {
-                    return agent.add("Not enough food items in your list to find a recipe right now!");
+                        return agent.add("Not enough food items in your list to find a recipe right now!");
                     } else {
                         return potentialIngredients;
                     }
@@ -470,10 +470,10 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
                 console.log(doc.id);
                 shopping_list_qp.push(doc.data());
                 console.log("Shopping List qp in single list " + shopping_list_qp);
-                string = string + `📝 ${doc.data().listName} \n\n🛒 ${doc.data().list_quantity} item(s) with a total cost of €${doc.data().list_price} \n\nIt contains the following items: \n`;
+                string = string + `📝 ${doc.data().listName} \n𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆 𝗼𝗳 𝗜𝘁𝗲𝗺𝘀: ${doc.data().list_quantity}\n𝗧𝗼𝘁𝗮𝗹 𝗣𝗿𝗶𝗰𝗲:€${doc.data().list_price}\n\nList Contents:`;
                 var items_arr = doc.data().items;
                 items_arr.forEach(itemsDesc => {
-                    string = string + `\n\u2022${itemsDesc.name} 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n\n`;
+                    string = string + `\n\u2022${itemsDesc.name} 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n`;
                 });
             });
         }
@@ -737,10 +737,10 @@ function getAllLists(agent, messengerID) {
             } else {
                 snapshot.forEach(doc => {
 
-                    string = string + `📝 ${doc.data().listName} \n\n🛒 ${doc.data().list_quantity} item(s) with a total cost of €${doc.data().list_price} \n\nIt contains the following items: \n`;
+                    string = string + `\n📝 ${doc.data().listName} \n𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆 𝗼𝗳 𝗜𝘁𝗲𝗺𝘀: ${doc.data().list_quantity}\n𝗧𝗼𝘁𝗮𝗹 𝗣𝗿𝗶𝗰𝗲:€${doc.data().list_price}\n\nList Contents:`;
                     var items_arr = doc.data().items;
                     items_arr.forEach(itemsDesc => {
-                        string = string + `\n\u2022${itemsDesc.name}\n𝗣𝗿𝗶𝗰𝗲 𝗣𝗲𝗿 𝗜𝘁𝗲𝗺: €${itemsDesc.price}\n𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n\n`;
+                        string = string + `\n\u2022${itemsDesc.name} 𝗤𝘂𝗮𝗻𝘁𝗶𝘁𝘆: ${itemsDesc.quantity}.\n`;
                     });
 
                 });

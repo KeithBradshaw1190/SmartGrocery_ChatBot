@@ -16,7 +16,7 @@
       ],
       "parameters": [
         {
-          "id": "cafa5d71-02d1-4034-93a1-ee0940bb0fe8",
+          "id": "bfc294db-fcfc-4ca9-b130-315424ad8901",
           "required": true,
           "dataType": "@sys.any",
           "name": "recipe_ingredients",
@@ -24,11 +24,11 @@
           "prompts": [
             {
               "lang": "en",
-              "value": "What ingredients do you have?"
+              "value": "What do you want make or what ingredients do you want to use?"
             },
             {
               "lang": "en",
-              "value": "What ingredients do you want to use?"
+              "value": "What do you want make or what ingredients do you want to use?"
             }
           ],
           "promptMessages": [],
@@ -38,7 +38,7 @@
           "isList": false
         },
         {
-          "id": "8cce359f-a69c-4edd-a567-5f61a189f8fb",
+          "id": "7d4e1148-d8fd-4b4e-a322-b6e9bafc0bca",
           "required": false,
           "dataType": "@Recipe-Types-and-Categories",
           "name": "recipe_type",
@@ -52,10 +52,10 @@
       ],
       "messages": [
         {
-          "type": 1,
-          "platform": "facebook",
+          "type": 0,
           "lang": "en",
-          "condition": ""
+          "condition": "",
+          "speech": "Having trouble finding a recipe with $recipe_ingredients, can you try other ingredients?"
         }
       ],
       "defaultResponsePlatforms": {
